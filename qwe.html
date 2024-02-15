@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Заявка</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="form_nav">
+			<a href="#" class="logo">НГТК ID</a>
+			<button class="nav_btn">Личный кабинет</button>
+		</div>
+		<form>
+			<div class="content_form">
+				<h2>Выберите специальность</h2>
+				<div class="row">
+					<div class="specialnost col-md-8">
+						<select class="form-select">
+							<option>09.02.07 Информационные системы и программирование</option>
+						</select>
+
+					</div>
+					<div class="specialnost col-md-4">
+						<select class="form-select">
+							<option>Бюджетная</option>
+						</select>
+					</div>
+				</div>
+				<h2>Основная информция</h2>
+				<div class="row">
+					<div class="basicInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="Фамилия">
+					</div>
+					<div class="basicInfo col-3">
+						<input class="form-control" type="text" name="name" placeholder="Имя">
+					</div>
+					<div class="basicInfo col-3">
+						<input class="form-control" type="text" name="surname" placeholder="Отчество">
+					</div>
+					<div class="basicInfo col-3">
+						<input class="form-control" type="text" name="date" placeholder="Дата рождения">
+					</div>
+					<div class="basicInfo col-3">
+						<input class="form-control" type="text" name="citizens" placeholder="Гражданство">
+					</div>
+				</div>
+
+
+				<h2>Персональная информция</h2>
+				<label class="primer">Пример заполнения адресов: Самарская обл., г. Новокуйбышевск, ул. Миронова д.0,
+					кв.0</label>
+				<div class="row">
+					<div class="personalInfo col-6">
+						<input class="form-control" type="text" name="lastname" placeholder="Адрес прописки">
+					</div>
+					<div class="personalInfo col-6">
+						<input class="form-control" type="text" name="name" placeholder="Адрес фактического проживания">
+					</div>
+					<div class="personalInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="Серия и номер паспорта">
+					</div>
+					<div class="personalInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="Дата выдачи паспорта">
+					</div>
+					<div class="personalInfo col-6">
+						<input class="form-control" type="text" name="lastname" placeholder="Выдан кем">
+					</div>
+					<div class="personalInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="СНИЛС">
+					</div>
+					<div class="personalInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="Код подразделения">
+					</div>
+				</div>
+
+				<h2>Информация об образовании</h2>
+				<div class="row">
+					<div class="educationInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="Дата выдачи аттестата">
+					</div>
+					<div class="educationInfo col-3">
+						<input class="form-control" type="text" name="name" placeholder="Номер аттестата">
+					</div>
+					<div class="educationInfo col-3">
+						<input class="form-control" type="text" name="lastname" placeholder="Средний балл аттестата">
+					</div>
+					<div class="educationInfo col-3">
+						<select class="form-select">
+							<option>Английский язык</option>
+						</select>
+					</div>
+					<div class="educationInfo col-6">
+						<select class="form-select">
+							<option>Впервые</option>
+						</select>
+					</div>
+					<div class="educationInfo col-6">
+						<input class="form-control" type="text" name="lastname"
+							placeholder="Организация, выдавшая аттестат">
+					</div>
+					<div class="educationInfo col-6">
+						<input class="form-control" type="text" name="lastname"
+							placeholder="Область в которой выдан аттестат">
+					</div>
+				</div>
+
+				<h2>Информация о семье</h2>
+				<div class="row">
+					<div class="familyInfo col-4">
+						<input class="form-control" type="text" name="lastname" placeholder="ФИО мамы/опекуна">
+					</div>
+					<div class="familyInfo col-4">
+						<input class="form-control" type="text" name="name" placeholder="Телефон мамы/опекуна">
+					</div>
+					<div class="familyInfo col-4">
+						<input class="form-control" type="text" name="lastname" placeholder="Место работы мамы/опекуна">
+					</div>
+					<div class="familyInfo col-4">
+						<input class="form-control" type="text" name="lastname" placeholder="ФИО отца/опекуна">
+					</div>
+					<div class="familyInfo col-4">
+						<input class="form-control" type="text" name="name" placeholder="Телефон отца/опекуна">
+					</div>
+					<div class="familyInfo col-4">
+						<input class="form-control" type="text" name="lastname" placeholder="Место работы отца/опекуна">
+					</div>
+					<div class="familyInfo col-8">
+						<input class="form-control" type="text" name="lastname"
+							placeholder="Адрес фактического проживания семьи">
+					</div>
+
+				</div>
+				<h2>Дополнительная информация</h2>
+				<div class="row">
+					<div class="AdditionalInfo col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="poor" name="poor">
+							<label class="form-check-label" for="poor">Малоимущие</label>
+						</div>
+					</div>
+					<div class="AdditionalInfo col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="manyСhildren" name="manyСhildren">
+							<label class="form-check-label" for="manyСhildren">Многодетная</label>
+						</div>
+					</div>
+					<div class="AdditionalInfo col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="nofull" name="nofull">
+							<label class="form-check-label" for="nofull">Неполная</label>
+						</div>
+					</div>
+					<div class="AdditionalInfo col-3">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="full" name="full">
+							<label class="form-check-label" for="full">Полная</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<select class="form-select">
+								<option>Не задан</option>
+							</select>
+						</div>
+						<div class="col-4">
+							<select class="form-select">
+								<option>Не задан</option>
+							</select>
+						</div>
+						<div class="col-4">
+							<select class="form-select">
+								<option>Не нуждаюсь</option>
+							</select>
+						</div>
+
+					</div>
+				</div>
+				<h2>Подтверждающие документы</h2>
+				<span class="primer">Разрешённые форматы документов: png, jpeg, jpg, не более 4Мб.<br>
+					Загруженные документы будут зашифрованы на стороне сервера.<br>
+					Сжать документы можно через <a href="#" class="link">cервис</a></span>
+				<div class="verifyRow row">
+					<div class="verify col-5">
+						<label for="">Паспорт абитурента разворот страниц 2-3 (скан-копия/фото)</label>
+						<input type="file" name="lastname" placeholder="Адрес прописки">
+					</div>
+					<div class="verify col-5">
+						<label for="">Паспорт абитурента прописка (скан-копия/фото)</label>
+						<input type="file" name="name" placeholder="Адрес фактического проживания">
+					</div>
+					<div class="verify col-5">
+						<label for="">Документ об образовании (скан-копия/фото) аттестат (без твёрдой обложки)</label>
+						<input type="file" name="lastname" placeholder="Серия и номер паспорта">
+					</div>
+					<div class="verify col-5">
+						<label for="">Документ об образовании (скан-копия/фото) приложение с оценками</label>
+						<input type="file" name="lastname" placeholder="Дата выдачи паспорта">
+					</div>
+				</div>
+				<h2>Контактная информация</h2>
+				<div class="contact row">
+					<div class="contactInfo col-4">
+						<input class="form-control" type="text" name="lastname" placeholder="Email (абитурента)">
+					</div>
+					<div class="contactInfo col-4">
+						<input class="form-control" type="text" name="name" placeholder="Номер телефона (абитурента)">
+					</div>
+					<div class="contactInfo col-4">
+						<input class="form-control" type="text" name="lastname"
+							placeholder="Ссылка на Вконтакте абитурента">
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="con col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="personaldata" name="personaldata">
+							<label class="form-check-label" for="personaldata">Я даю согласие на обработку моих <a href="#">персональных
+									данных</a></label>
+						</div>
+					</div>
+					<div class="con col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="normativ" name="normativ">
+							<label class="form-check-label" for="normativ">Я прочитал(а) и ознакомился(лась) с основными <a href="#">нормативными
+									документами</a></label>
+						</div>
+					</div>
+					<div class="con col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="emailsend" name="emailsend">
+							<label class="form-check-label" for="emailsend">Оповещать об изменениях в заявлении на email</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer_form">
+				<button class="back_btn">Назад</button>
+				<button class="submit_btn">Отправить</button>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
