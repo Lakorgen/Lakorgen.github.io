@@ -17,6 +17,7 @@ body{
 	width: 1024px;
 	margin: 0 auto;
 	border-radius: 10px;
+	animation: move 2s infinite alternate;
 }
 .content_form{
 	
@@ -122,6 +123,19 @@ h2{
 margin-bottom: 10px;
   }
 
+@keyframes move{
+	0%{
+		transform: rotate(-45deg);
+	}
+	50%{
+		transform: rotate(0deg);
+		
+	}
+	100%{
+		transform: rotate(45deg);
+
+	}
+}
 /*input {
 	padding: 12px 15px;
 	border-radius: 8px;
