@@ -46,6 +46,9 @@ padding: 16px;
     margin: 10px;
     position: relative;
 }
+.movie:hover{
+   scale: 1.05;
+}
 
 .movie__cover{
 width: 225px;

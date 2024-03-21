@@ -67,6 +67,7 @@ async function openModal(id){
     const respData = await resp.json();
     console.log(respData);
     modalEL.classList.add("modal--show");
+    document.body.classList.add("stop-scrolling");
 
     modalEL.innerHTML = `
         <div class="modal__card">
@@ -92,6 +93,7 @@ async function openModal(id){
 
 function closeModal(){
     modalEL.classList.remove('modal--show');
+    document.body.classList.remove('stop-scrolling');
 }
 
 window.addEventListener("click", (e)=>{
@@ -101,7 +103,7 @@ window.addEventListener("click", (e)=>{
 })
 
 window.addEventListener("keydown", (e) => {
-    if(e.keydown === 27){
-        modalEL.classList.remove("modal--show");
+    if(e.keyCode === 27){
+        closeModal();
     }
 })
