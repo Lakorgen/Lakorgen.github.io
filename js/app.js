@@ -1,15 +1,38 @@
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    effect: "fade",
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
-    
-    const API_Popular_ongoing = 'https://shikimori.one/api/animes?limit=30&status=ongoing&order=popularity';
-    const API_URL_Search = 'https://shikimori.one/api/animes?limit=30&search=';
-    const API_URL_ANIME_ID = 'https://shikimori.one/api/animes/';
+const API_Popular_ongoing = 'https://shikimori.one/api/animes?limit=30&status=ongoing&order=popularity';
+const API_Popular_ongoing_slider = 'https://shikimori.one/api/animes?limit=10&status=ongoing&order=popularity';
+const API_URL_Search = 'https://shikimori.one/api/animes?limit=30&search=';
+const API_URL_ANIME_ID = 'https://shikimori.one/api/animes/';
+const api_filt = 'https://shikimori.one/api/animes?';
 getAnime(API_Popular_ongoing);
+getAnimeSlider(API_Popular_ongoing_slider);
+
+
+
 
 async function getAnime(url){
     const resp = await fetch(url);
     const respData = await resp.json();
     console.log(respData);
     showAnime(respData);
+}
+async function getAnimeSlider(url){
+    const resp = await fetch(url);
+    const respData = await resp.json();
+    console.log(respData);
+    showAnimeSlider(respData);
 }
 
 function getClassByRate(vote){
@@ -20,6 +43,19 @@ function getClassByRate(vote){
     } else{
         return 'red';
     }
+}
+
+function showAnimeSlider(data){
+    const AnimesEl = document.querySelector(".swiper-wrapper");
+    document.querySelector(".swiper-wrapper").innerHTML="";
+    data.forEach((anime) => {
+        const animeEl = document.createElement("div");
+        animeEl.classList.add("swiper-slide");
+        animeEl.innerHTML = 
+        `<img src="https://shikimori.one/${anime.image.original}" alt="постер" class="movie__cover">`;
+                animeEl.addEventListener('click', () => openModal(anime.id))
+        AnimesEl.appendChild(animeEl);
+    });
 }
 
 function showAnime(data){
@@ -107,3 +143,4 @@ window.addEventListener("keydown", (e) => {
         closeModal();
     }
 })
+
