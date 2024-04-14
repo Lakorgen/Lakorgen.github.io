@@ -16,23 +16,14 @@ const API_Popular_ongoing_slider = 'https://shikimori.one/api/animes?limit=10&st
 const API_URL_Search = 'https://shikimori.one/api/animes?limit=30&search=';
 const API_URL_ANIME_ID = 'https://shikimori.one/api/animes/';
 const api_filt = 'https://shikimori.one/api/animes?';
-getAnime(API_Popular_ongoing);
-getAnimeSlider(API_Popular_ongoing_slider);
 
+getData(API_Popular_ongoing);
 
-
-
-async function getAnime(url){
+async function getData(url){
     const resp = await fetch(url);
     const respData = await resp.json();
     console.log(respData);
-    showAnime(respData);
-}
-async function getAnimeSlider(url){
-    const resp = await fetch(url);
-    const respData = await resp.json();
-    console.log(respData);
-    showAnimeSlider(respData);
+    showData(respData);
 }
 
 function getClassByRate(vote){
@@ -45,6 +36,11 @@ function getClassByRate(vote){
     }
 }
 
+function showData(data){
+    showAnime(data.slice(0, 30)); 
+    showAnimeSlider(data.slice(0, 10));
+}
+
 function showAnimeSlider(data){
     const AnimesEl = document.querySelector(".swiper-wrapper");
     document.querySelector(".swiper-wrapper").innerHTML="";
@@ -53,30 +49,28 @@ function showAnimeSlider(data){
         animeEl.classList.add("swiper-slide");
         animeEl.innerHTML = 
         `<img src="https://shikimori.one/${anime.image.original}" alt="постер" class="movie__cover">`;
-                animeEl.addEventListener('click', () => openModal(anime.id))
+        animeEl.addEventListener('click', () => openModal(anime.id))
         AnimesEl.appendChild(animeEl);
     });
 }
 
 function showAnime(data){
     const AnimesEl = document.querySelector(".movies");
-
     document.querySelector(".movies").innerHTML="";
-
     data.forEach((anime) => {
         const animeEl = document.createElement("div");
         animeEl.classList.add("movie");
         animeEl.innerHTML = 
         `<div class="movie__cover-inner">
-                    <img src="https://shikimori.one/${anime.image.original}" alt="постер" class="movie__cover">
-                    <div class="movie__cover--darkened"></div>
-                </div>
-                <div class="movie__info">
-                    <div class="movie__title">${anime.russian}</div>
-                    <div class="movie__category">Серий: ${anime.episodes_aired}/${anime.episodes != 0 ? anime.episodes : "?"}</div>
-                    <div class="movie__average movie__average--${getClassByRate(anime.score)}">${anime.score}</div>
-                </div>`;
-                animeEl.addEventListener('click', () => openModal(anime.id))
+            <img src="https://shikimori.one/${anime.image.original}" alt="постер" class="movie__cover">
+            <div class="movie__cover--darkened"></div>
+        </div>
+        <div class="movie__info">
+            <div class="movie__title">${anime.russian}</div>
+            <div class="movie__category">Серий: ${anime.episodes_aired}/${anime.episodes != 0 ? anime.episodes : "?"}</div>
+            <div class="movie__average movie__average--${getClassByRate(anime.score)}">${anime.score}</div>
+        </div>`;
+        animeEl.addEventListener('click', () => openModal(anime.id))
         AnimesEl.appendChild(animeEl);
     });
 }
@@ -88,7 +82,7 @@ form.addEventListener("submit",(e) =>{
 
     const TotalURL = `${API_URL_Search}${search.value}&order=popularity`
     if(search.value){
-        getAnime(TotalURL);
+        getData(TotalURL);
         search.value ="";
     }
 })
